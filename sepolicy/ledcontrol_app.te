@@ -1,0 +1,11 @@
+type ledcontrol_app, domain;
+type led_app_data, file_type;
+app_domain(ledcontrol_app)
+
+allow ledcontrol_app activity_service:service_manager { find };
+allow ledcontrol_app surfaceflinger_service:service_manager { find };
+allow ledcontrol_app audio_service:service_manager { find };
+allow ledcontrol_app led_app_data:dir { search write};
+allow installd led_app_data:dir { relabelto getattr read write search open setattr };
+allow ledcontrol_app sysfs_leds:dir { search };
+allow ledcontrol_app sysfs:file { getattr open write };

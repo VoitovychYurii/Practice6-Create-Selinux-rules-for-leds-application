@@ -1,0 +1,1 @@
+/data/data/com.example.ledcontrol(/.*)?          u:object_r:led_app_file:s0
